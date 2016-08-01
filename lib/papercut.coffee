@@ -3,17 +3,17 @@ async = require('async')
 {FileStore, S3Store, TestStore } = require('./store')
 Processor = require('./processor')
 
-config = {
-  storage: 'file'
-  extension: 'jpg'
-  process: 'resize'
-  directory: '.'
-  quality: 1,
-  custom: [],
-  acl: 'public-read'
-}
+module.exports = papercut = () ->
+  config = {
+    storage: 'file'
+    extension: 'jpg'
+    process: 'resize'
+    directory: '.'
+    quality: 1,
+    custom: [],
+    acl: 'public-read'
+  }
 
-module.exports = papercut =
   ###
   Execute block according current environment
 
